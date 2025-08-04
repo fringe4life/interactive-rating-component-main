@@ -12,19 +12,19 @@
   <title>Frontend Mentor | Interactive rating component</title>
 </head>
 <body>
-  <main class="main">
+  <main class="main grid-center">
     <!-- Rating State -->
     <section class="rating-card" id="rating-state" aria-labelledby="rating-title">
       <div class="card">
         <!-- Star Icon -->
-        <div class="star-container" aria-hidden="true">
+        <div class="star-container rounded-full square grid-center" aria-hidden="true">
           <img src="./images/icon-star.svg" alt="" class="star-icon">
         </div>
 
         <!-- Rating Content -->
         <div class="rating-content">
-          <h1 id="rating-title" class="rating-title text-preset-1">How did we do?</h1>
-          <p class="rating-description text-preset-4-regular">
+          <h1 id="rating-title" class="rating-title text-preset-1 no-margin text-white">How did we do?</h1>
+          <p class="rating-description text-preset-4-regular no-margin text-grey">
             Please let us know how we did with your support request. All feedback is appreciated 
             to help us improve our offering!
           </p>
@@ -36,23 +36,23 @@
               <div class="rating-buttons" role="radiogroup" aria-labelledby="rating-title">
                 <label class="rating-button-wrapper">
                   <input type="radio" name="rating" value="1" class="rating-input" aria-describedby="rating-description">
-                  <span class="rating-button text-preset-3">1</span>
+                  <span class="rating-button text-preset-3 grid-center square rounded-full">1</span>
                 </label>
                 <label class="rating-button-wrapper">
                   <input type="radio" name="rating" value="2" class="rating-input" aria-describedby="rating-description">
-                  <span class="rating-button text-preset-3">2</span>
+                  <span class="rating-button text-preset-3 grid-center square rounded-full">2</span>
                 </label>
                 <label class="rating-button-wrapper">
                   <input type="radio" name="rating" value="3" class="rating-input" aria-describedby="rating-description">
-                  <span class="rating-button text-preset-3">3</span>
+                  <span class="rating-button text-preset-3 grid-center square rounded-full">3</span>
                 </label>
                 <label class="rating-button-wrapper">
                   <input type="radio" name="rating" value="4" class="rating-input" aria-describedby="rating-description">
-                  <span class="rating-button text-preset-3">4</span>
+                  <span class="rating-button text-preset-3 grid-center square rounded-full">4</span>
                 </label>
                 <label class="rating-button-wrapper">
                   <input type="radio" name="rating" value="5" class="rating-input" aria-describedby="rating-description">
-                  <span class="rating-button text-preset-3">5</span>
+                  <span class="rating-button text-preset-3 grid-center square rounded-full">5</span>
                 </label>
               </div>
             </fieldset>
@@ -70,21 +70,21 @@
       <div class="card">
         <div class="thank-you-content">
           <!-- Thank You Illustration -->
-          <div class="illustration-container" aria-hidden="true">
+          <div class="illustration-container grid-center" aria-hidden="true">
             <img src="./images/illustration-thank-you.svg" alt="" class="thank-you-illustration">
           </div>
 
           <!-- Rating Display -->
           <div class="rating-display" aria-live="polite">
-            <p class="rating-text text-preset-4-regular" id="selected-rating-text">
+            <p class="rating-text text-preset-4-regular no-margin" id="selected-rating-text">
               You selected <span id="selected-rating">0</span> out of 5
             </p>
           </div>
 
           <!-- Thank You Message -->
           <div class="thank-you-message">
-            <h2 id="thank-you-title" class="thank-you-title text-preset-1">Thank you!</h2>
-            <p class="thank-you-description text-preset-4-regular">
+            <h2 id="thank-you-title" class="thank-you-title text-preset-1 no-margin text-white">Thank you!</h2>
+            <p class="thank-you-description text-preset-4-regular no-margin text-grey">
               We appreciate you taking the time to give a rating. If you ever need more support, 
               don't hesitate to get in touch!
             </p>
@@ -101,9 +101,9 @@
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Coinnich</a>.
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" type="module"></script>
 </body>
 </html>

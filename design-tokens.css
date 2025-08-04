@@ -158,17 +158,49 @@
    Layout Utilities
    ========================================================================== */
 
-/* Center content */
-.center {
-  display: grid;
-  place-items: center;
-}
-
 /* Space between items */
 .between {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* ==========================================================================
+   Common Utilities
+   ========================================================================== */
+
+/* Grid layouts */
+.grid {
+  display: grid;
+}
+
+.grid-center {
+  display: grid;
+  place-items: center;
+}
+
+/* Margins */
+.no-margin {
+  margin: 0;
+}
+
+/* Colors */
+.text-white {
+  color: var(--color-white);
+}
+
+.text-grey {
+  color: var(--color-grey-500);
+}
+
+/* Aspect ratios */
+.square {
+  aspect-ratio: 1;
+}
+
+/* Border radius */
+.rounded-full {
+  border-radius: 50%;
 }
 
 /* ==========================================================================

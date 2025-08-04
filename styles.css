@@ -14,7 +14,6 @@
 
 body {
   margin: 0;
-  min-block-size: 100svh;
   font-family: 'Overpass', sans-serif;
   background: var(--color-grey-950);
   color: var(--color-white);
@@ -22,12 +21,11 @@ body {
 }
 
 /* ==========================================================================
-   Layout
-   ========================================================================== */
+Layout
+========================================================================== */
 
 .main {
-  display: grid;
-  place-items: center;
+  min-block-size: 100svh;
   padding: var(--spacing-200);
 }
 
@@ -50,17 +48,13 @@ body {
 
 .star-container {
   inline-size: 3rem; /* 48px */
-  aspect-ratio: 1;
   background: var(--color-grey-900);
   border-radius: 1.5rem; /* 24px */
-  display: grid;
-  place-items: center;
   margin-block-end: var(--spacing-400);
 }
 
 .star-icon {
   inline-size: 1rem; /* 16px */
-  aspect-ratio: 1;
 }
 
 /* ==========================================================================
@@ -70,16 +64,6 @@ body {
 .rating-content {
   display: grid;
   gap: var(--spacing-400);
-}
-
-.rating-title {
-  margin: 0;
-  color: var(--color-white);
-}
-
-.rating-description {
-  margin: 0;
-  color: var(--color-grey-500);
 }
 
 /* ==========================================================================
@@ -119,12 +103,8 @@ body {
 }
 
 .rating-button {
-  display: grid;
-  place-items: center;
   inline-size: 3.25rem; /* 52px */
-  aspect-ratio: 1;
   background: var(--color-grey-900);
-  border-radius: 50%;
   color: var(--color-grey-500);
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
@@ -186,18 +166,15 @@ body {
 .thank-you-content {
   display: grid;
   gap: var(--spacing-400);
-  text-align: center;
 }
 
 .illustration-container {
-  display: grid;
-  place-items: center;
   margin-block-end: var(--spacing-200);
 }
 
 .thank-you-illustration {
   inline-size: 10.125rem; /* 162px */
-  aspect-ratio: 3  / 2;
+  aspect-ratio: 3 / 2;
 }
 
 .rating-display {
@@ -210,17 +187,6 @@ body {
   color: var(--color-orange-500);
   padding: var(--spacing-100) var(--spacing-300);
   border-radius: 1.4rem; /* 22px */
-  margin: 0;
-}
-
-.thank-you-title {
-  margin: 0;
-  color: var(--color-white);
-}
-
-.thank-you-description {
-  margin: 0;
-  color: var(--color-grey-500);
 }
 
 /* ==========================================================================
@@ -258,17 +224,17 @@ body {
   background: var(--color-grey-900);
   border-radius: 1rem; /* 16px */
   border: 0.0625rem solid var(--color-orange-500);
+  h2 {
+    color: var(--color-orange-500);
+    margin-block-end: var(--spacing-200);
+  }
+  p {
+    color: var(--color-grey-500);
+    margin: 0;
+  }
 }
 
-.error-message h2 {
-  color: var(--color-orange-500);
-  margin-block-end: var(--spacing-200);
-}
 
-.error-message p {
-  color: var(--color-grey-500);
-  margin: 0;
-}
 
 /* ==========================================================================
    Attribution
@@ -277,22 +243,20 @@ body {
 .attribution {
   position: fixed;
   bottom: var(--spacing-200);
-  left: 50%;
+  inset-inline-start: 50%;
   translate: -50% 0;
   font-size: 0.75rem; /* 12px - custom size, no utility class available */
   text-align: center;
   color: var(--color-grey-500);
-}
 
-.attribution a {
-  color: var(--color-orange-500);
-  text-decoration: none;
+  a{
+    color: var(--color-orange-500);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
-
-.attribution a:hover {
-  text-decoration: underline;
-}
-
 /* ==========================================================================
    Responsive Design
    ========================================================================== */
