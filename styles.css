@@ -1,0 +1,399 @@
+/* ==========================================================================
+   Interactive Rating Component Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-block-size: 100svh;
+  font-family: 'Overpass', sans-serif;
+  background: var(--color-grey-950);
+  color: var(--color-white);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.main {
+  display: grid;
+  place-items: center;
+  padding: var(--spacing-200);
+}
+
+/* ==========================================================================
+   Card Component
+   ========================================================================== */
+
+.card {
+  inline-size: 100%;
+  max-inline-size: 25.75rem; /* 412px */
+  background: radial-gradient(circle at top, var(--color-gradient-1) 0%, var(--color-gradient-2) 100%);
+  border-radius: 1.875rem; /* 30px */
+  padding: var(--spacing-400);
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   Star Container
+   ========================================================================== */
+
+.star-container {
+  inline-size: 3rem; /* 48px */
+  aspect-ratio: 1;
+  background: var(--color-grey-900);
+  border-radius: 1.5rem; /* 24px */
+  display: grid;
+  place-items: center;
+  margin-block-end: var(--spacing-400);
+}
+
+.star-icon {
+  inline-size: 1rem; /* 16px */
+  aspect-ratio: 1;
+}
+
+/* ==========================================================================
+   Rating Content
+   ========================================================================== */
+
+.rating-content {
+  display: grid;
+  gap: var(--spacing-400);
+}
+
+.rating-title {
+  margin: 0;
+  color: var(--color-white);
+}
+
+.rating-description {
+  margin: 0;
+  color: var(--color-grey-500);
+}
+
+/* ==========================================================================
+   Rating Form
+   ========================================================================== */
+
+.rating-form {
+  display: grid;
+  gap: var(--spacing-400);
+}
+
+.rating-fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rating-buttons {
+  display: flex;
+  gap: var(--spacing-200);
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   Rating Buttons
+   ========================================================================== */
+
+.rating-button-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.rating-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rating-button {
+  display: grid;
+  place-items: center;
+  inline-size: 3.25rem; /* 52px */
+  aspect-ratio: 1;
+  background: var(--color-grey-900);
+  border-radius: 50%;
+  color: var(--color-grey-500);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Hover State */
+.rating-button-wrapper:hover .rating-button {
+  background: var(--color-grey-500);
+  color: var(--color-white);
+}
+
+/* Focus State */
+.rating-input:focus-visible + .rating-button {
+  outline: 0.125rem solid var(--color-orange-500);
+  outline-offset: 0.125rem;
+}
+
+/* Selected State */
+.rating-input:checked + .rating-button {
+  background: var(--color-orange-500);
+  color: var(--color-white);
+}
+
+/* ==========================================================================
+   Submit Button
+   ========================================================================== */
+
+.submit-button {
+  inline-size: 100%;
+  block-size: 2.75rem; /* 44px */
+  background: var(--color-orange-500);
+  border: none;
+  border-radius: 1.4rem; /* 22px */
+  color: var(--color-white);
+  font-family: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.submit-button:hover {
+  background: var(--color-white);
+  color: var(--color-orange-500);
+}
+
+.submit-button:focus-visible {
+  outline: 0.125rem solid var(--color-white);
+  outline-offset: 0.125rem;
+}
+
+.submit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Thank You State
+   ========================================================================== */
+
+.thank-you-content {
+  display: grid;
+  gap: var(--spacing-400);
+  text-align: center;
+}
+
+.illustration-container {
+  display: grid;
+  place-items: center;
+  margin-block-end: var(--spacing-200);
+}
+
+.thank-you-illustration {
+  inline-size: 10.125rem; /* 162px */
+  aspect-ratio: 3  / 2;
+}
+
+.rating-display {
+  margin-block-end: var(--spacing-200);
+}
+
+.rating-text {
+  display: inline-block;
+  background: var(--color-grey-900);
+  color: var(--color-orange-500);
+  padding: var(--spacing-100) var(--spacing-300);
+  border-radius: 1.4rem; /* 22px */
+  margin: 0;
+}
+
+.thank-you-title {
+  margin: 0;
+  color: var(--color-white);
+}
+
+.thank-you-description {
+  margin: 0;
+  color: var(--color-grey-500);
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+.sr-only {
+  position: absolute;
+  inline-size: 0.0625rem; /* 1px */
+  block-size: 0.0625rem; /* 1px */
+  padding: 0;
+  margin: -0.0625rem; /* -1px */
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   Error States
+   ========================================================================== */
+
+.rating-error {
+  color: var(--color-orange-500);
+  margin-block-start: var(--spacing-100);
+  padding: var(--spacing-100) var(--spacing-200);
+  background: rgba(252, 118, 20, 0.1);
+  border-radius: 0.5rem; /* 8px */
+  border: 0.0625rem solid var(--color-orange-500);
+}
+
+.error-message {
+  text-align: center;
+  padding: var(--spacing-400);
+  background: var(--color-grey-900);
+  border-radius: 1rem; /* 16px */
+  border: 0.0625rem solid var(--color-orange-500);
+}
+
+.error-message h2 {
+  color: var(--color-orange-500);
+  margin-block-end: var(--spacing-200);
+}
+
+.error-message p {
+  color: var(--color-grey-500);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Attribution
+   ========================================================================== */
+
+.attribution {
+  position: fixed;
+  bottom: var(--spacing-200);
+  left: 50%;
+  translate: -50% 0;
+  font-size: 0.75rem; /* 12px - custom size, no utility class available */
+  text-align: center;
+  color: var(--color-grey-500);
+}
+
+.attribution a {
+  color: var(--color-orange-500);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+/* Tablet Styles */
+@media (min-width: 48rem) { /* 768px */
+  .card {
+    max-inline-size: 28.75rem; /* 460px */
+    padding: var(--spacing-500);
+  }
+
+  .rating-button {
+    inline-size: 2.625rem; /* 42px */
+  }
+
+  .star-container {
+    inline-size: 2.5rem; /* 40px */
+    border-radius: 1.25rem; /* 20px */
+  }
+
+  .star-icon {
+    inline-size: 0.75rem; /* 14px */
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 48rem) { /* 768px */
+  .main {
+    padding: var(--spacing-100);
+  }
+
+  .card {
+    max-inline-size: 20.5rem; /* 328px */
+    padding: var(--spacing-300);
+    border-radius: 1rem; /* 16px */
+  }
+
+  .rating-buttons {
+    gap: var(--spacing-100);
+  }
+
+  .rating-button {
+    inline-size: 2.625rem; /* 42px */
+  }
+
+  .star-container {
+    inline-size: 2.5rem; /* 40px */
+    border-radius: 1.25rem; /* 20px */
+  }
+
+  .star-icon {
+    inline-size: 0.75rem; /* 14px */
+  }
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .card {
+    animation: --card-fade-in 0.3s ease-out;
+  }
+
+  .rating-button {
+    animation: --button-scale 0.1s ease-out;
+  }
+
+  .submit-button {
+    animation: --button-pulse 0.2s ease-out;
+  }
+}
+
+@keyframes --card-fade-in {
+  from {
+    opacity: 0;
+    translate: 0 1rem;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes --button-scale {
+  from {
+    scale: 0.95;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes --button-pulse {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.05;
+  }
+  100% {
+    scale: 1;
+  }
+} 

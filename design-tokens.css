@@ -1,0 +1,220 @@
+/* ==========================================================================
+   Design Tokens - Interactive Rating Component
+   Extracted from Figma Design System
+   ========================================================================== */
+
+/* Font Family Import */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap');
+
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+
+:root {
+  /* Primary Colors */
+  --color-orange-500: hsl(25, 97%, 53%); /* #FC7614 */
+  
+  /* Neutral Colors */
+  --color-white: hsl(0, 100%, 100%); /* #FFFFFF */
+  --color-black: hsl(0, 0%, 0%); /* #000000 */
+  
+  /* Grey Scale */
+  --color-grey-950: hsl(216, 12%, 8%); /* #131518 */
+  --color-grey-900: hsl(213, 19%, 18%); /* #262E38 */
+  --color-grey-500: hsl(217, 12%, 63%); /* #969FAD */
+  
+  /* Gradient Colors */
+  --color-gradient-1: hsl(215, 20%, 17%); /* #232A34 */
+  --color-gradient-2: hsl(216, 24%, 12%); /* #181E27 */
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/* Text Preset 1 - Overpass Bold */
+.text-preset-1 {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem; /* 28px */
+  line-height: 2.25rem; /* 36px */
+  letter-spacing: 0;
+}
+
+/* Text Preset 2 - Overpass Bold */
+.text-preset-2 {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.875rem; /* 30px */
+  letter-spacing: 0;
+}
+
+/* Text Preset 3 - Overpass Bold */
+.text-preset-3 {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 700;
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+  letter-spacing: 0.0125rem; /* 0.2px */
+}
+
+/* Text Preset 4 (Bold) - Overpass Bold */
+.text-preset-4-bold {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 700;
+  font-size: 1rem; /* 16px */
+  line-height: 1.125rem; /* 18px */
+  letter-spacing: 0.125rem; /* 2px */
+}
+
+/* Text Preset 4 (Regular) - Overpass Regular */
+.text-preset-4-regular {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+  letter-spacing: 0;
+}
+
+/* Text Preset 5 (Bold) - Overpass Bold */
+.text-preset-5-bold {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.125rem; /* 18px */
+  letter-spacing: 0.11625rem; /* 1.86px */
+}
+
+/* Text Preset 5 (SemiBold) - Overpass SemiBold */
+.text-preset-5-semibold {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.5rem; /* 24px */
+  letter-spacing: 0.01rem; /* 0.16px */
+}
+
+/* Text Preset 5 (Regular) - Overpass Regular */
+.text-preset-5-regular {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.375rem; /* 22px */
+  letter-spacing: 0;
+}
+
+/* ==========================================================================
+   Spacing
+   ========================================================================== */
+
+:root {
+  /* Spacing Scale */
+  --spacing-0: 0; /* 0px */
+  --spacing-100: 0.5rem; /* 8px */
+  --spacing-200: 1rem; /* 16px */
+  --spacing-300: 1.5rem; /* 24px */
+  --spacing-400: 2rem; /* 32px */
+  --spacing-500: 2.5rem; /* 40px */
+  --spacing-1300: 6.5rem; /* 104px */
+  --spacing-1700: 8.5rem; /* 136px */
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+/* Spacing Utilities */
+.gap-0 { gap: var(--spacing-0); }
+.gap-100 { gap: var(--spacing-100); }
+.gap-200 { gap: var(--spacing-200); }
+.gap-300 { gap: var(--spacing-300); }
+.gap-400 { gap: var(--spacing-400); }
+.gap-500 { gap: var(--spacing-500); }
+.gap-1300 { gap: var(--spacing-1300); }
+.gap-1700 { gap: var(--spacing-1700); }
+
+/* Padding Utilities */
+.p-0 { padding: var(--spacing-0); }
+.p-100 { padding: var(--spacing-100); }
+.p-200 { padding: var(--spacing-200); }
+.p-300 { padding: var(--spacing-300); }
+.p-400 { padding: var(--spacing-400); }
+.p-500 { padding: var(--spacing-500); }
+.p-1300 { padding: var(--spacing-1300); }
+.p-1700 { padding: var(--spacing-1700); }
+
+/* Margin Utilities */
+.m-0 { margin: var(--spacing-0); }
+.m-100 { margin: var(--spacing-100); }
+.m-200 { margin: var(--spacing-200); }
+.m-300 { margin: var(--spacing-300); }
+.m-400 { margin: var(--spacing-400); }
+.m-500 { margin: var(--spacing-500); }
+.m-1300 { margin: var(--spacing-1300); }
+.m-1700 { margin: var(--spacing-1700); }
+
+/* ==========================================================================
+   Layout Utilities
+   ========================================================================== */
+
+/* Center content */
+.center {
+  display: grid;
+  place-items: center;
+}
+
+/* Space between items */
+.between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Responsive Typography Utilities
+   ========================================================================== */
+
+/* Desktop-first approach - base styles are for desktop and tablet */
+
+/* Mobile only: Rating Title */
+@media (max-width: 23.4375rem) { /* 375px and below */
+  .text-preset-1 {
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.875rem; /* 30px */
+  }
+}
+
+/* Mobile only: Rating Description */
+@media (max-width: 23.4375rem) { /* 375px and below */
+  .text-preset-4-regular {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.375rem; /* 22px */
+  }
+}
+
+/* Mobile only: Rating Buttons */
+@media (max-width: 23.4375rem) { /* 375px and below */
+  .text-preset-3 {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.125rem; /* 18px */
+    letter-spacing: 0.116875rem; /* 1.87px */
+  }
+}
+
+/* Mobile only: Submit Button */
+@media (max-width: 23.4375rem) { /* 375px and below */
+  .text-preset-5-semibold {
+    font-weight: 700;
+    letter-spacing: 0.116875rem; /* 1.87px */
+    line-height: 1.125rem; /* 18px */
+  }
+}
+
+/* ==========================================================================
+   Background Gradients
+   ========================================================================== */
+
+.bg-gradient {
+  background: radial-gradient(circle at top, var(--color-gradient-1) 0%, var(--color-gradient-2) 100%);
+} 

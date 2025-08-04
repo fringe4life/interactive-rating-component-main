@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive rating component - Rate your experience with our support">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="design-tokens.css">
+  <link rel="stylesheet" href="styles.css">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+</head>
+<body>
+  <main class="main">
+    <!-- Rating State -->
+    <section class="rating-card" id="rating-state" aria-labelledby="rating-title">
+      <div class="card">
+        <!-- Star Icon -->
+        <div class="star-container" aria-hidden="true">
+          <img src="./images/icon-star.svg" alt="" class="star-icon">
+        </div>
+
+        <!-- Rating Content -->
+        <div class="rating-content">
+          <h1 id="rating-title" class="rating-title text-preset-1">How did we do?</h1>
+          <p class="rating-description text-preset-4-regular">
+            Please let us know how we did with your support request. All feedback is appreciated 
+            to help us improve our offering!
+          </p>
+
+          <!-- Rating Form -->
+          <form class="rating-form" id="rating-form" novalidate>
+            <fieldset class="rating-fieldset">
+              <legend class="sr-only">Select your rating</legend>
+              <div class="rating-buttons" role="radiogroup" aria-labelledby="rating-title">
+                <label class="rating-button-wrapper">
+                  <input type="radio" name="rating" value="1" class="rating-input" aria-describedby="rating-description">
+                  <span class="rating-button text-preset-3">1</span>
+                </label>
+                <label class="rating-button-wrapper">
+                  <input type="radio" name="rating" value="2" class="rating-input" aria-describedby="rating-description">
+                  <span class="rating-button text-preset-3">2</span>
+                </label>
+                <label class="rating-button-wrapper">
+                  <input type="radio" name="rating" value="3" class="rating-input" aria-describedby="rating-description">
+                  <span class="rating-button text-preset-3">3</span>
+                </label>
+                <label class="rating-button-wrapper">
+                  <input type="radio" name="rating" value="4" class="rating-input" aria-describedby="rating-description">
+                  <span class="rating-button text-preset-3">4</span>
+                </label>
+                <label class="rating-button-wrapper">
+                  <input type="radio" name="rating" value="5" class="rating-input" aria-describedby="rating-description">
+                  <span class="rating-button text-preset-3">5</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="submit-button text-preset-5-semibold" id="submit-button">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thank You State -->
+    <section class="thank-you-card" id="thank-you-state" aria-labelledby="thank-you-title" hidden>
+      <div class="card">
+        <div class="thank-you-content">
+          <!-- Thank You Illustration -->
+          <div class="illustration-container" aria-hidden="true">
+            <img src="./images/illustration-thank-you.svg" alt="" class="thank-you-illustration">
+          </div>
+
+          <!-- Rating Display -->
+          <div class="rating-display" aria-live="polite">
+            <p class="rating-text text-preset-4-regular" id="selected-rating-text">
+              You selected <span id="selected-rating">0</span> out of 5
+            </p>
+          </div>
+
+          <!-- Thank You Message -->
+          <div class="thank-you-message">
+            <h2 id="thank-you-title" class="thank-you-title text-preset-1">Thank you!</h2>
+            <p class="thank-you-description text-preset-4-regular">
+              We appreciate you taking the time to give a rating. If you ever need more support, 
+              don't hesitate to get in touch!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Screen Reader Only Content -->
+  <div class="sr-only" id="rating-description">
+    Choose a rating from 1 to 5, where 1 is the lowest and 5 is the highest rating
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
