@@ -33,31 +33,31 @@
           <form class="rating-form grid" id="rating-form" novalidate>
                           <fieldset class="rating-fieldset no-margin no-padding">
               <legend class="sr-only">Select your rating</legend>
-              <div class="rating-buttons grid" role="radiogroup" aria-labelledby="rating-title">
+              <div class="rating-buttons grid" role="radiogroup" aria-labelledby="rating-title" aria-describedby="rating-description">
                 <label class="rating-button-wrapper">
-                  <input type="radio" name="rating" value="1" class="rating-input" aria-describedby="rating-description">
+                  <input type="radio" name="rating" value="1" class="rating-input">
                   <span class="rating-button text-preset-3 grid-center square rounded-full">1</span>
                 </label>
                 <label class="rating-button-wrapper">
-                  <input type="radio" name="rating" value="2" class="rating-input" aria-describedby="rating-description">
+                  <input type="radio" name="rating" value="2" class="rating-input">
                   <span class="rating-button text-preset-3 grid-center square rounded-full">2</span>
                 </label>
                 <label class="rating-button-wrapper">
-                  <input type="radio" name="rating" value="3" class="rating-input" aria-describedby="rating-description">
+                  <input type="radio" name="rating" value="3" class="rating-input">
                   <span class="rating-button text-preset-3 grid-center square rounded-full">3</span>
                 </label>
                 <label class="rating-button-wrapper">
-                  <input type="radio" name="rating" value="4" class="rating-input" aria-describedby="rating-description">
+                  <input type="radio" name="rating" value="4" class="rating-input">
                   <span class="rating-button text-preset-3 grid-center square rounded-full">4</span>
                 </label>
                 <label class="rating-button-wrapper">
-                  <input type="radio" name="rating" value="5" class="rating-input" aria-describedby="rating-description">
+                  <input type="radio" name="rating" value="5" class="rating-input">
                   <span class="rating-button text-preset-3 grid-center square rounded-full">5</span>
                 </label>
               </div>
             </fieldset>
 
-            <button type="submit" class="submit-button text-preset-5-semibold" id="submit-button">
+            <button type="submit" class="submit-button text-preset-5-semibold" id="submit-button" disabled aria-describedby="submit-instruction">
               Submit
             </button>
           </form>
@@ -97,6 +97,9 @@
   <!-- Screen Reader Only Content -->
   <div class="sr-only" id="rating-description">
     Choose a rating from 1 to 5, where 1 is the lowest and 5 is the highest rating
+  </div>
+  <div class="sr-only" id="submit-instruction">
+    Submit button is disabled until you select a rating
   </div>
 
   <div class="attribution">

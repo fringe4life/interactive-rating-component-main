@@ -103,8 +103,10 @@ class RatingComponent {
     
     if (hasRating) {
       this.submitButton.removeAttribute('aria-describedby');
+      // Announce that submit button is now enabled
+      this.announceSubmitButtonState(true);
     } else {
-      this.submitButton.setAttribute('aria-describedby', 'rating-description');
+      this.submitButton.setAttribute('aria-describedby', 'submit-instruction');
     }
   }
 
@@ -204,6 +206,24 @@ class RatingComponent {
     announcement.setAttribute('aria-live', 'polite');
     announcement.className = 'sr-only';
     announcement.textContent = `Rating ${this.selectedRating} selected`;
+    
+    document.body.appendChild(announcement);
+    
+    setTimeout(() => {
+      if (announcement.parentNode) {
+        announcement.remove();
+      }
+    }, 1000);
+  }
+
+  /**
+   * Announce submit button state change to screen readers
+   */
+  announceSubmitButtonState(enabled) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.className = 'sr-only';
+    announcement.textContent = enabled ? 'Submit button is now enabled' : 'Submit button is disabled';
     
     document.body.appendChild(announcement);
     
