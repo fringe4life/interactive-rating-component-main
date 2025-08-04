@@ -31,9 +31,9 @@
 
           <!-- Rating Form -->
           <form class="rating-form grid" id="rating-form" novalidate>
-            <fieldset class="rating-fieldset">
+                          <fieldset class="rating-fieldset no-margin no-padding">
               <legend class="sr-only">Select your rating</legend>
-              <div class="rating-buttons" role="radiogroup" aria-labelledby="rating-title">
+              <div class="rating-buttons grid" role="radiogroup" aria-labelledby="rating-title">
                 <label class="rating-button-wrapper">
                   <input type="radio" name="rating" value="1" class="rating-input" aria-describedby="rating-description">
                   <span class="rating-button text-preset-3 grid-center square rounded-full">1</span>
@@ -103,6 +103,14 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>. 
     Coded by <a href="#">Coinnich</a>.
   </div>
+
+  <!-- Templates -->
+  <template id="error-message-template">
+    <div class="error-message" role="alert">
+      <h2>Something went wrong</h2>
+      <p class="no-margin">We're sorry, but there was an error loading the rating component. Please refresh the page and try again.</p>
+    </div>
+  </template>
 
   <script src="script.js" type="module"></script>
 </body>

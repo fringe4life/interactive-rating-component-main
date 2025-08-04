@@ -62,7 +62,7 @@ Layout
    ========================================================================== */
 
 .rating-content {
-  gap: var(--spacing-400);
+  gap: var(--spacing-200);
 }
 
 /* ==========================================================================
@@ -75,13 +75,10 @@ Layout
 
 .rating-fieldset {
   border: none;
-  margin: 0;
-  padding: 0;
 }
 
 .rating-buttons {
-  display: flex;
-  gap: var(--spacing-200);
+  grid-auto-flow: column;
   justify-content: space-between;
 }
 
@@ -227,7 +224,6 @@ Layout
   }
   p {
     color: var(--color-grey-500);
-    margin: 0;
   }
 }
 
@@ -289,10 +285,6 @@ Layout
     max-inline-size: 20.5rem; /* 328px */
     padding: var(--spacing-300);
     border-radius: 1rem; /* 16px */
-  }
-
-  .rating-buttons {
-    gap: var(--spacing-100);
   }
 
   .rating-button {

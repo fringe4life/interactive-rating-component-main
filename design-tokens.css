@@ -177,6 +177,11 @@
   margin: 0;
 }
 
+/* Padding */
+.no-padding {
+  padding: 0;
+}
+
 /* Colors */
 .text-white {
   color: var(--color-white);

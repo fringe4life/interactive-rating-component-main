@@ -260,13 +260,12 @@ async function initApp() {
     
     // Fallback error handling
     const main = document.querySelector('.main');
-    if (main) {
-      main.innerHTML = `
-        <div class="error-message" role="alert">
-          <h2>Something went wrong</h2>
-          <p>We're sorry, but there was an error loading the rating component. Please refresh the page and try again.</p>
-        </div>
-      `;
+    const errorTemplate = document.getElementById('error-message-template');
+    
+    if (main && errorTemplate) {
+      const errorContent = errorTemplate.content.cloneNode(true);
+      main.innerHTML = '';
+      main.appendChild(errorContent);
     }
   }
 }
