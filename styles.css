@@ -132,7 +132,7 @@ Layout
   background: var(--color-orange-500);
   border: none;
   border-radius: 1.4rem; /* 22px */
-  color: var(--color-white);
+  color: var(--color-grey-950);
   font-family: inherit;
   text-transform: uppercase;
   cursor: pointer;
