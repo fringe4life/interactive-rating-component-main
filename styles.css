@@ -264,15 +264,6 @@ Layout
   .rating-button {
     inline-size: 2.625rem; /* 42px */
   }
-
-  .star-container {
-    inline-size: 2.5rem; /* 40px */
-    border-radius: 1.25rem; /* 20px */
-  }
-
-  .star-icon {
-    inline-size: 0.75rem; /* 14px */
-  }
 }
 
 /* Mobile Styles */
