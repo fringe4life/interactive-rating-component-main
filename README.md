@@ -1,94 +1,159 @@
-# Frontend Mentor - Interactive rating component
+# Frontend Mentor - Interactive rating component solution
 
-![Design preview for the Interactive rating component coding challenge](./preview.jpg)
+This is a solution to the [Interactive rating component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+### The challenge
 
-## The challenge
-
-Your challenge is to build out this interactive rating component and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for the app depending on their device's screen size
 - See hover states for all interactive elements on the page
 - Select and submit a number rating
 - See the "Thank you" card state after submitting a rating
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![Design preview for the Interactive rating component](./preview.jpg)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### Links
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+- Solution URL: [GitHub Repository](https://github.com/yourusername/interactive-rating-component)
+- Live Site URL: [Live Demo](https://your-live-site-url.com)
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+## My process
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+### Built with
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- **Semantic HTML5 markup** - Proper heading hierarchy, form elements, and ARIA attributes
+- **CSS custom properties** - Design tokens for colors, typography, and spacing
+- **CSS Grid & Flexbox** - Modern layout techniques for responsive design
+- **Mobile-first responsive design** - Optimized for all screen sizes
+- **Vanilla JavaScript (ES6+)** - Class-based component architecture
+- **Accessibility-first approach** - WCAG compliant with screen reader support
+- **CSS utility classes** - Reusable design system components
+- **Template elements** - Clean separation of HTML structure
 
-## Building your project
+### What I learned
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+This project reinforced several important concepts and introduced new techniques:
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+#### Design System Architecture
+I learned to extract design tokens from Figma and create a comprehensive design system:
 
-## Deploying your project
+```css
+/* Design tokens for consistent theming */
+:root {
+  --color-orange-500: hsl(25, 97%, 53%);
+  --color-grey-900: hsl(213, 19%, 18%);
+  --spacing-400: 2rem; /* 32px */
+}
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+/* Typography utility classes */
+.text-preset-1 {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem; /* 28px */
+  line-height: 2.25rem; /* 36px */
+}
+```
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+#### Accessibility Best Practices
+Implemented comprehensive accessibility features:
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+```html
+<!-- Proper ARIA relationships -->
+<div class="rating-buttons" role="radiogroup" 
+     aria-labelledby="rating-title" 
+     aria-describedby="rating-description">
+  <input type="radio" name="rating" value="1" class="rating-input">
+</div>
 
-## Create a custom `README.md`
+<!-- Screen reader announcements -->
+<div class="sr-only" id="submit-instruction">
+  Submit button is disabled until you select a rating
+</div>
+```
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+#### JavaScript Component Architecture
+Created a maintainable class-based component:
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+```javascript
+class RatingComponent {
+  constructor() {
+    this.selectedRating = 0;
+    this.submitButton = null;
+    this.init();
+  }
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+  updateSubmitButtonState() {
+    const hasRating = this.selectedRating > 0;
+    this.submitButton.disabled = !hasRating;
+    
+    if (hasRating) {
+      this.announceSubmitButtonState(true);
+    }
+  }
+}
+```
 
-## Submitting your solution
+#### CSS Utility-First Approach
+Extracted common patterns into reusable utilities:
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+```css
+/* Utility classes for common patterns */
+.grid-center {
+  display: grid;
+  place-items: center;
+}
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+.square {
+  aspect-ratio: 1;
+}
 
-## Sharing your solution
+.no-margin {
+  margin: 0;
+}
+```
 
-There are multiple places you can share your solution:
+### Continued development
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+Areas I want to focus on in future projects:
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+1. **Advanced CSS animations** - Implement more sophisticated micro-interactions
+2. **Form validation** - Add comprehensive client-side validation with better UX
+3. **State management** - Explore more complex state patterns for larger applications
+4. **Testing** - Implement unit and integration tests for JavaScript components
+5. **Performance optimization** - Focus on bundle size and loading performance
+6. **Internationalization** - Add multi-language support for accessibility
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+### Useful resources
 
-## Got feedback for us?
+- [MDN Web Docs - ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) - Comprehensive guide to ARIA attributes and accessibility
+- [CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) - Deep dive into CSS Grid for modern layouts
+- [Web.dev - Accessibility](https://web.dev/accessibility/) - Google's accessibility guidelines and best practices
+- [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) - Guide to CSS variables and design tokens
+- [JavaScript Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) - Modern JavaScript class syntax and patterns
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi@frontendmentor.io.
+## Author
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+- Frontend Mentor - [@coinnich](https://www.frontendmentor.io/profile/fringe4life)
+- GitHub - [@coinnich](https://github.com/fringe4life)
 
-**Have fun building!** 🚀
+---
+
+**Note**: This project demonstrates modern web development practices with a focus on accessibility, maintainability, and user experience. The design system approach ensures consistency and scalability, while the accessibility-first mindset ensures the component works for all users.
